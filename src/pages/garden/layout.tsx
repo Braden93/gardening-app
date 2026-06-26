@@ -60,7 +60,7 @@ function BedForm({ initial, onSave, onCancel }: {
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
           <Label>Layout Type</Label>
-          <Select value={layoutType} onValueChange={(v) => setLayoutType(v as typeof layoutType)}
+          <Select value={layoutType} onValueChange={(v) => setLayoutType(v as any)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="rows">Traditional Rows</SelectItem>
@@ -73,7 +73,7 @@ function BedForm({ initial, onSave, onCancel }: {
         </div>
         <div className="space-y-1">
           <Label>Sun Exposure</Label>
-          <Select value={sun} onValueChange={(v) => setSun(v as typeof sun)}
+          <Select value={sun} onValueChange={(v) => setSun(v as any)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="full_sun">Full Sun (6+ hrs)</SelectItem>
