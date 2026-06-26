@@ -107,7 +107,6 @@ export default function RotationPage() {
       .sort((a, b) => b.year - a.year)
     if (recent.length === 0) return 'No history — plant what you need most.'
     const lastFamily = recent[0].plant_family
-    const avoidFamilies = [lastFamily]
     const suggestions: Record<string, string> = {
       nightshade: 'Legumes or root crops',
       brassica: 'Legumes or alliums',

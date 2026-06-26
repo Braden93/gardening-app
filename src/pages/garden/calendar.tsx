@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -30,9 +30,6 @@ function formatDate(dateStr: string) {
   })
 }
 
-function isOverdue(date: string) {
-  return date < new Date().toISOString().slice(0, 10)
-}
 
 export default function CalendarPage() {
   const { tasks, isLoading, create, complete, uncomplete, remove } = useGardenTasks()

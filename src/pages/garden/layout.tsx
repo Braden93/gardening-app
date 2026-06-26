@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Badge } from '@/components/ui/badge'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { useGardenBeds } from '@/hooks/use-garden-beds'
-import { Sun, CloudSun, Cloud, Plus, Trash2, Edit2 } from 'lucide-react'
+import { Sun, CloudSun, Cloud, Plus, Trash2 } from 'lucide-react'
 import type { GardenBed } from '@/types/garden'
 
 const LAYOUT_ICONS: Record<string, string> = {
@@ -60,7 +60,7 @@ function BedForm({ initial, onSave, onCancel }: {
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
           <Label>Layout Type</Label>
-          <Select value={layoutType} onValueChange={setLayoutType}>
+          <Select value={layoutType} onValueChange={(v) => setLayoutType(v as typeof layoutType)}
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="rows">Traditional Rows</SelectItem>
@@ -73,7 +73,7 @@ function BedForm({ initial, onSave, onCancel }: {
         </div>
         <div className="space-y-1">
           <Label>Sun Exposure</Label>
-          <Select value={sun} onValueChange={setSun}>
+          <Select value={sun} onValueChange={(v) => setSun(v as typeof sun)}
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="full_sun">Full Sun (6+ hrs)</SelectItem>
